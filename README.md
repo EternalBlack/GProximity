@@ -5,7 +5,11 @@ A script for calculating the distance in meters between two points utilizing goo
 
 [See a demo](http://gproximity.eternalblack.com) | Coming soon.
 
-
+## Requirements
+Google Maps API needs to be present
+```
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY">
+```
 
 ## Functions
 ---
