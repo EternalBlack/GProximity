@@ -11,7 +11,7 @@ Google Maps API needs to be present as well as jQuery.
 <!-- Load jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <!-- Load Google Maps API -->
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY">
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
 <!-- Load GProxmity -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 ```
