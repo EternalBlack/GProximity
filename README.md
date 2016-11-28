@@ -1,20 +1,25 @@
 # GProximity
-Google Maps Proximity Jquery Plugin
+Google Maps Proximity jQuery Plugin
 
 A script for calculating the distance in meters between two points utilizing google maps geocoder to work with addresses.
 
 [See a demo](http://gproximity.eternalblack.com) | Coming soon.
 
 ## Requirements
-Google Maps API needs to be present
+Google Maps API needs to be present as well as jQuery.
 ```
+<!-- Load jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- Load Google Maps API -->
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY">
+<!-- Load GProxmity -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 ```
 
 ## Functions
 ---
 ##### `$.gproximity = function(obj1, obj2, callback)`
-Dalculates the distance beween obj1 and obj2 and triggers callback function in finish.
+Calculates the distance between obj1 and obj2 and triggers callback function on finish.
 
 ##### `obj1`
 Can be either an array or a string
@@ -28,13 +33,13 @@ Can be either an array or a string
 #### Not yet working!!! Trying to add google maps API dynamically.
 
 ##### `api_key`
-Can be either an array or a string
+Takes the API-Key as string.
+
+##### `api_secret`
+Takes the API-Secret as string.
 
 ##### `callback`
-Can be either an array or a string
-
-##### `callback`
-Callback function on finish. Contains the result as parameter. Output in meters
+Callback function on finish. Can be utilized to trigger proximity calculation.
 
 
 
@@ -58,7 +63,7 @@ $.gproximity('Flagpole Plaza NY 10004', [40.6892282, -74.1145403], function(res)
 ```
 or
 ```
-$.gproximity('Flagpole Plaza NY 10004', [40.6892282, -74.1145403], function(res){
+$.gproximity('Flagpole Plaza NY 10004', 'Liberty State Park Heliport, Jersey City, NJ, United States', function(res){
   $('.map').html(res +  "meter");
 });
 ```
