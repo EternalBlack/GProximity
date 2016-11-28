@@ -275,8 +275,6 @@
 
     <!-- Load jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!-- Load Google Maps API -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzVhh4fdFUg-9xFTTYPkI3ScBl04ZdJLE&callback=initMap" async defer></script>
     <!-- Load GProxmity -->
     <script src="../dist/GProximity.min.js"></script>
 
@@ -369,6 +367,9 @@
                 });
             });
         }
+        $( document ).ready(function() {
+            $.gproximity.init('AIzaSyAzVhh4fdFUg-9xFTTYPkI3ScBl04ZdJLE', 'initMap');
+        });
 
         function clearOverlays() {
             for (var i = 0; i < markersArray.length; i++ ) {
