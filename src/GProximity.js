@@ -48,58 +48,59 @@
 (function($) {
     $.gproximity = function(obj1, obj2, callback) {
         var plugin = this;
-        var _lat1, _lng1, _lat2, _lng2;
 
-        switch ($.type(obj1)) {
+        loadLatLng(obj1, 0).then(function() {
+            loadLatLng(obj2, 1).then(function() {
+                var d = calcDistance(_lat1, _lng1, _lat2, _lng2);
+                var res = Math.round(d * 1000);
+                if (typeof callback == 'function') {
+                    callback.call(this, res);
+                }
+                return res;
+
+            }).fail(function() {
+                return null;
+            });
+        }).fail(function() {
+            return null;
+        });
+    }
+
+    var loadLatLng = function(obj, set) {
+        var deferred = $.Deferred();
+        switch ($.type(obj)) {
             case 'string':
                 var geocoder = new google.maps.Geocoder();
                 geocoder.geocode({
-                    'address': obj1
+                    'address': obj
                 }, function(results, status) {
-                    if (status == google.maps.GeocoderStatus.OK) {
-                        _lat1 = results[0].geometry.location.lat();
-                        _lng1 = results[0].geometry.location.lng();
+                    if (status == 'OK') {
+                        if(!set) {
+                            _lat1 = results[0].geometry.location.lat();
+                            _lng1 = results[0].geometry.location.lng();
+                        } else {
+                            _lat2 = results[0].geometry.location.lat();
+                            _lng2 = results[0].geometry.location.lng();
+                        }
+                        deferred.resolve();
                     } else {
-                        return null;
+                        deferred.reject();
                     }
                 });
                 break;
             case 'array':
-                _lat1 = obj1[0];
-                _lng1 = obj1[1];
+                if(!set) {
+                    _lat1 = obj[0];
+                    _lng1 = obj[1];
+                } else {
+                    _lat2 = obj[0];
+                    _lng2 = obj[1];
+                }
                 break;
             default:
-                return null;
+                deferred.reject();
         }
-
-        switch ($.type(obj2)) {
-            case 'string':
-                var geocoder = new google.maps.Geocoder();
-                geocoder.geocode({
-                    'address': obj2
-                }, function(results, status) {
-                    if (status == google.maps.GeocoderStatus.OK) {
-                        _lat2 = results[0].geometry.location.lat();
-                        _lng2 = results[0].geometry.location.lng();
-                    } else {
-                        return null;
-                    }
-                });
-                break;
-            case 'array':
-                _lat2 = obj2[0];
-                _lng2 = obj2[1];
-                break;
-            default:
-                return null;
-        }
-
-        var d = calcDistance(_lat1, _lng1, _lat2, _lng2);
-        var res = Math.round(d * 1000);
-        if (typeof callback == 'function') {
-            callback.call(this, res);
-        }
-        return res;
+        return deferred;
     }
 
     $.gproximity.init = function(options) {
