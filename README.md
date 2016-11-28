@@ -29,18 +29,13 @@ Can be either an array or a string
 
 ---
 
-#### `$.gproximity.init = function({api_key: null, api_secret: null, callback: function(){}})`
-#### Not yet working!!! Trying to add google maps API dynamically.
+#### `$.gproximity.init = function(api_key, callback`
 
 ##### `api_key`
 Takes the API-Key as string.
 
-##### `api_secret`
-Takes the API-Secret as string.
-
 ##### `callback`
-Callback function on finish. Can be utilized to trigger proximity calculation.
-
+Callback function as string/name. Get's called on finish. For example can be utilized to trigger proximity calculation.
 
 
 ## How to use

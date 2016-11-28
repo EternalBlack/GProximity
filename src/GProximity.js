@@ -36,7 +36,7 @@
 ████████████████████             ███████████████              ██████████████┌
 ██████████████████████              ██████████████▄             ██████████████
 
- * gproximity v0.1.0
+ * gproximity v0.1.1
  *
  * Licensed GPLv3 for open source use
  * or GProximity Commercial License for commercial use
@@ -103,13 +103,11 @@
         return deferred;
     }
 
-    $.gproximity.init = function(options) {
-        var settings = $.extend({
-            api_key: null,
-            api_secret: null,
-            callback: function() {}
-        }, options);
-
+    $.gproximity.init = function(api_key, callback) {
+        if (typeof callback == 'undefined') {
+            callback = '';
+        }
+        $.getScript("http://maps.googleapis.com/maps/api/js?key="+api_key+"&callback="+callback+"", function () {});
         return true;
     }
 
