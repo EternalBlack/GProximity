@@ -7,13 +7,18 @@ A script for calculating the distance in meters between two points utilizing goo
 
 ## Requirements
 Google Maps API needs to be present as well as jQuery.
+
+For Google Maps API ( can also be done via $.gproximity.init(api_key, calback) )
+```
+<!-- Load Google Maps API -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+```
+
 ```
 <!-- Load jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<!-- Load Google Maps API -->
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
 <!-- Load GProxmity -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="../dist/GProxmity.min.js"></script>
 ```
 
 ## Functions
