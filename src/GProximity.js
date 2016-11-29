@@ -107,7 +107,7 @@
         if (typeof callback == 'undefined') {
             callback = '';
         }
-        $.getScript("http://maps.googleapis.com/maps/api/js?key="+api_key+"&callback="+callback+"", function () {});
+        $.getScript("https://maps.googleapis.com/maps/api/js?key="+api_key+"&callback="+callback+"", function () {});
         return true;
     }
 
