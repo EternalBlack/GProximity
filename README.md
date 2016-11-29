@@ -3,7 +3,7 @@ Google Maps Proximity jQuery Plugin
 
 A script for calculating the distance in meters between two points utilizing google maps geocoder to work with addresses.
 
-[See a demo](http://gproximity.eternalblack.com).
+[See a demo](https://gproximity.eternalblack.com).
 
 ## Requirements
 Google Maps API needs to be present as well as jQuery.

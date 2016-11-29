@@ -41,7 +41,7 @@
  * Licensed GPLv3 for open source use
  * or GProximity Commercial License for commercial use
  *
- * http://gproximity.eternalblack.com
+ * https://gproximity.eternalblack.com
  * Copyright 2016 Eternal Black | Markus Bittner
  */
 
