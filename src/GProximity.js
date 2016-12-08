@@ -96,6 +96,7 @@
                     _lat2 = obj[0];
                     _lng2 = obj[1];
                 }
+                deferred.resolve();
                 break;
             default:
                 deferred.reject();
