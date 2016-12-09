@@ -23,7 +23,7 @@ For Google Maps API ( can also be done via $.gproximity.init(api_key, calback) )
 
 ## Functions
 ---
-##### `$.gproximity = function(obj1, obj2, callback)`
+##### `$.gproximity = function(obj1, obj2, callback(result))`
 Calculates the distance between obj1 and obj2 and triggers callback function on finish.
 
 ##### `obj1`
@@ -43,7 +43,7 @@ Callback function to be triggered.
 Takes the API-Key as string.
 
 ##### `callback`
-Callback function as string/name (!Important! - only the name i.e. "MyCallback" and not "MyCallback()" as it gets triggred by to GoogleMaps load finish callback). Get's called on finish. For example can be utilized to trigger proximity calculation.
+Callback function as string/name (!Important! - only the name i.e. "MyCallback" and not "MyCallback()" as it gets triggered by GoogleMaps load finish callback). Get's called on finish. For example can be utilized to trigger proximity calculation.
 *For future update: passing a real function as callback appears to be more convenient. Will consider that.*
 
 
